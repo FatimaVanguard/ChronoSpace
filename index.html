@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Age Calculator Project</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body>
+        <div class="topCard">
+            <h2>🎂 Age Calculator🎉</h2>
+
+            <div class="dateCard">
+                <span class="liveTime" id="liveTime"></span>
+                <span class="liveDate" id="liveDate"></span>
+            </div>
+
+            <div class="darkMode">
+            <span class="dark">🌑 Dark Mode</span>
+
+            <!--الحاوية اللي بتربط الرسمة بالزر المخفي، علشان لما تضغطي على الشكل تتحول الضغطة للـ Input فوراً.-->
+            <label class="switch">
+            <input type="checkbox" id="themeToggle" onchange="toggleTheme()">
+            <span class="sliderRound"></span>
+            </label>
+            </div>
+
+            <div class="langCard">
+                <!--لعمل قائمه منسدله-->
+                <select id="languageSelect" onchange="changeLanguage(this.value)">
+                    <option value="en">🌐 English</option>
+                    <option value="ar">🌐 العربية</option>
+                    <option value="ja">🌐 日本語</option>
+                </select>
+            </div>
+
+        </div>
+
+<!-- The image made by AI -->
+    <div class="mainWrapper">
+
+        <div class="container">
+            <img src="images/ChatGPT Image Jul 10, 2026, 07_20_06 PM (2).png">
+            <h1>Your Age Result🎉</h1>
+            <P class="greeting">Here is your age and amazing details about your life!</P>
+            <p class="description">Birth Year</p>
+            <input type="date" id="birthYear" placeholder="🕓 YYYY">
+
+            <div class="firstFinal">
+            <p class="minAge">Min: 1900</p>
+            <p class="maxAge">Max: 2027</p>
+            </div>
+
+            <input type="button" id="calculateBtn" value="🖥 Calculate Age">
+
+        <div class="detailsCard">
+            <div class="greenCard">
+
+            </div>
+
+
+
+
+
+
+        </div>
+
+        <div class="interactiveCard">
+
+        </div>
+        
+        </div>
+
+        <div class="result">
+            <span class="information">😇 Fun Facts About You</span>
+            <p id = "output"></p>
+            <p id = "message"></p>
+        </div>
+
+    </div>
+        
+        <p class="myName">Made by future engineer <span>Fatima❤️</span></p>
+
+        <script src = "script.js"></script>
+    </body>
+</html>
