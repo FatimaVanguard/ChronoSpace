@@ -1,2 +1,12 @@
-# age-calculator
-A program that calculates a user's age by entering their date of birth (year, month, and day). The program calculates the user's age but does not allow the entry of ages that do not currently exist. Other features are under development, such as calculating the number of days, months, and minutes the user has lived, and celebrating their birthday.
+# ChronoSpace
+# 🚀 ChronoPulse — Smart Age & Lifetime Tracker
+
+A dynamic and interactive web application designed to calculate exact age details with precision. Beyond standard age calculation, **ChronoPulse** offers real-time countdowns and unique cosmic age metrics.
+
+### ✨ Key Features:
+* 📅 **Precise Age Calculation:** Calculates exact years, months, days, hours, minutes, and seconds lived.
+* ⏳ **Live Counter:** Real-time ticking timer updating your total lived seconds continuously.
+* 🪐 **Interplanetary Age Explorer:** Discover how old you are on Saturn, Jupiter, Mars, Pluto, and Proxima!
+* 🎂 **Next Birthday Countdown:** Visual progress bar and days left until your upcoming birthday.
+* 🌐 **Multi-Language Support:** Fully supports English, Arabic (RTL support), and Japanese.
+* 🛡️ **Smart Validation:** Prevents invalid dates and unrealistic age inputs automatically.
