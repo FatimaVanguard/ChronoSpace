@@ -89,7 +89,8 @@ body.dark-theme input[type="button"]{
     box-shadow: 0 8px 24px rgba(168, 85, 247, 0.25);
 }
 
-input[type="date"] {
+input[type="date"],
+#birthYear {
     border: 2px solid #8b5cf6;
     height: 45px;
     width: calc(100% - 46px);
@@ -102,10 +103,14 @@ input[type="date"] {
     font-size: 17px;
     font-weight: 400;
     padding-left: 10px;
+    padding-right: 10px;
     caret-color: #38BDF8;
     background-color: #ffff;
     transition: all 0.3s ease;
     cursor: pointer;
+    -webkit-appearance: none;
+    appearance: none;
+    font-family: inherit;
 }
 
 .purpleLabel{
@@ -129,9 +134,11 @@ input[type="date"] {
     padding-top: 25px;
 }
 
-input[type="date"]:focus{
+input[type="date"]:focus,
+#birthYear:focus {
     border-color: #7c3aed;
     box-shadow: 0 0 10px rgba(139, 92, 246, 0.3);
+    outline: none;
 }
 
 input[type="date"]::-webkit-calendar-picker-indicator {
@@ -142,7 +149,8 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     transition: transform 0.2s ease;
 }
 
-body.dark-theme input[type="date"]{
+body.dark-theme input[type="date"],
+body.dark-theme #birthYear {
     background-color: #111827;
     color: #ffffff;
     border: 1px solid #A855F7;
