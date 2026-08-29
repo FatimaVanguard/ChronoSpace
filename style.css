@@ -12,16 +12,19 @@
 }
 
 body {
-    background-color: #F7F6FB;
+    background-image: url('images/bg.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     padding: 22px 26px 30px;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     margin: 0;
-    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 body.dark-theme {
-    background-color: #0B0F19;
-    background-image: radial-gradient(circle at 15% 0%, rgba(139, 92, 246, 0.08), transparent 40%),
+    background-image: url('images/hero-bg.png'),
+                    radial-gradient(circle at 15% 0%, rgba(139, 92, 246, 0.08), transparent 40%),
                     radial-gradient(circle at 85% 20%, rgba(109, 40, 217, 0.08), transparent 40%);
     color: #ffffff;
 }
@@ -861,15 +864,71 @@ body.dark-theme .daysLeft{
     color: #4ADE80;
 }
 
-.mainWrapper{
+.mainWrapper {
     display: flex;
-    width: 100%;
-    max-width: 1400px;
-    margin: 0 auto;
     gap: 24px;
-    flex-direction: row;
-    flex-wrap: wrap;
     align-items: flex-start;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.container {
+    flex: 1 1 560px;
+    max-width: 600px;
+}
+
+.rightCard {
+    flex: 1 1 480px;
+    max-width: 620px;
+}
+
+.theTop {
+    display: flex;
+    gap: 16px;
+    align-items: stretch;
+}
+
+body.mobile-layout .mainWrapper {
+    flex-direction: column;
+}
+
+body.mobile-layout .theTop {
+    flex-direction: column;
+}
+
+body.tablet-layout .mainWrapper {
+    flex-direction: column;
+}
+
+@media (max-width: 1024px) {
+    .mainWrapper {
+    flex-direction: column;
+}
+
+.container,
+.rightCard {
+    width: 100%;
+    max-width: 100%;
+}
+
+.theTop {
+    flex-direction: column;
+}
+}
+
+@media (max-width: 600px) {
+.container,
+.rightCard,
+.planets-card,
+.noteCard,
+.support-btn {
+    width: 100%;
+}
+
+.flexContainer {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(110px, 1fr));
+}
 }
 
 .rightCard{
@@ -1391,49 +1450,3 @@ body.dark-theme .support-btn:hover {
     box-shadow: 0 10px 24px rgba(251, 191, 36, 0.25);
 }
 
-/* Mobile & Tablet Responsive Media Query */
-@media (max-width: 900px) {
-    body {
-        padding: 12px;
-    }
-
-    .mainWrapper {
-        flex-direction: column;
-        gap: 15px;
-    }
-
-    .container, 
-    .rightCard {
-        width: 100% !important;
-    }
-
-    .theTop {
-        flex-direction: column;
-        gap: 15px;
-    }
-
-    .bottom-tools-row {
-        flex-direction: column-reverse;
-        width: 100%;
-        gap: 12px;
-    }
-
-    .support-btn {
-        width: 100%;
-        justify-content: center;
-    }
-
-    .noteCard {
-        width: 100%;
-        box-sizing: border-box;
-    }
-
-    .note-input {
-        min-width: 0;
-    }
-
-    .flexContainer {
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-}

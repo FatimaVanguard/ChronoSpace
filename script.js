@@ -34,6 +34,17 @@ function showToast(msg) {
     }, 3000);
 }
 
+function updateLayoutByScreen() {
+    const isMobile = window.innerWidth <= 600;
+    const isTablet = window.innerWidth <= 1024 && window.innerWidth > 600;
+
+    document.body.classList.toggle("mobile-layout", isMobile);
+    document.body.classList.toggle("tablet-layout", isTablet);
+}
+
+window.addEventListener("resize", updateLayoutByScreen);
+updateLayoutByScreen();
+
 function updateTime() {
     let today = new Date();
     let liveDateElem = document.getElementById("liveDate");
