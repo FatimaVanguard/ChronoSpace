@@ -272,6 +272,43 @@ function toggleTheme() {
     }
 }
 
+function setupDateInput() {
+    if (!birthDayInput) return;
+
+    const isMobileView = window.matchMedia('(max-width: 768px)').matches;
+
+    if (isMobileView) {
+        birthDayInput.type = 'text';
+        birthDayInput.setAttribute('inputmode', 'numeric');
+        birthDayInput.setAttribute('pattern', '\\d{4}-\\d{2}-\\d{2}');
+        birthDayInput.placeholder = 'YYYY-MM-DD';
+    } else {
+        birthDayInput.type = 'date';
+        birthDayInput.removeAttribute('inputmode');
+        birthDayInput.removeAttribute('pattern');
+        birthDayInput.placeholder = '🕓 YYYY-MM-DD';
+    }
+}
+
+birthDayInput.addEventListener('input', function () {
+    if (birthDayInput.type !== 'text') return;
+
+    let digits = birthDayInput.value.replace(/\D/g, '').slice(0, 8);
+    let formatted = digits;
+
+    if (digits.length > 4) {
+        formatted = digits.slice(0, 4) + '-' + digits.slice(4);
+    }
+    if (digits.length > 6) {
+        formatted = formatted.slice(0, 7) + '-' + formatted.slice(7);
+    }
+
+    birthDayInput.value = formatted;
+});
+
+window.addEventListener('resize', setupDateInput);
+setupDateInput();
+
 function calculateAge() {
     let birthValue = birthDayInput.value;
 
