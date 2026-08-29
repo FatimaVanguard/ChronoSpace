@@ -275,9 +275,9 @@ function toggleTheme() {
 function setupDateInput() {
     if (!birthDayInput) return;
 
-    const isMobileView = window.matchMedia('(max-width: 768px)').matches;
+    const isSmallDevice = window.matchMedia('(max-width: 1024px)').matches;
 
-    if (isMobileView) {
+    if (isSmallDevice) {
         birthDayInput.type = 'text';
         birthDayInput.setAttribute('inputmode', 'numeric');
         birthDayInput.setAttribute('pattern', '\\d{4}-\\d{2}-\\d{2}');
